@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "A backend which simulates many indepth functionility like youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "NodeJs",
+    "Express",
+    "Js"
+  ],
+  "author": "Ankit Kumar",
+  "license": "ISC"
+}
