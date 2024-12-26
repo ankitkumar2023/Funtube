@@ -1,18 +1,33 @@
 // import mongoose from 'mongoose';
 // import { DB_NAME } from './constants';
-import express from 'express'
+
 import dotenv from 'dotenv';
 import connectDb from './db/db.js';
+import app from './app.js'
+
+
+
 
 dotenv.config({
     path : "./env"
 })
 
-const app = express();
+const port = process.env.PORT || 8000;
 
-connectDb();
+connectDb()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`App is listning at port ${port}`)
+        })
+    })
+    .catch((error) => {
+        console.log("MongoDb connection failed !!!  ",error)
+    })
 
 
+
+//This is one of the way to connect to database directly from index file but it is not consider as a good practice 
+//we should keep our data base connection in a separate file so that it  make code more readable
 //IFFI - immediately envocked function
 /*
 (async () => {
