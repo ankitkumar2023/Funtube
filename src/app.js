@@ -16,7 +16,7 @@ app.use(cors({
 app.use(express.json({ limit: "20kb" }))
 
 //This helps in url whereever there is a space or any special symbol there this urlencode will provide
-//the encoded value of that like space ha  -> %20 encoded value 
+//the encoded value of that like space ka  -> %20 encoded value 
 app.use(express.urlencoded({ extended: true, limit: "20kb" }))
 
 app.use(cors());

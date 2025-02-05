@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
         trim: true,
        
     },
-    fullname: {
+    fullName: {
         type: String,
         required: true,
         trim: true,
@@ -55,7 +55,7 @@ userSchema.pre("save", async function (next) {
 
     if (!this.password.isModified("password")) return next();  //if password not modified then dont do anything just move out
 
-    this.password = bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
     next();
 })
 
